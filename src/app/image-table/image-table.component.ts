@@ -23,6 +23,6 @@ export class ImageTableComponent implements OnInit {
   }
 
   deleteImage(bildZuLöschen: Bild){
-    this.kommunikation.liste = this.kommunikation.liste.filter((bild) => {bild!=bildZuLöschen})
+    this.kommunikation.liste = this.kommunikation.liste.filter((bild) => {return !(bild===bildZuLöschen)})
   }
 }
