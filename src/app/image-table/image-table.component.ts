@@ -17,4 +17,12 @@ export class ImageTableComponent implements OnInit {
   getListe(): Bild[]{
     return this.kommunikation.liste
   }
+
+  addImage(){
+    this.kommunikation.liste.push({src: 'https://duckduckgo.com/i/f1b7948a.png',name: 'Neues Bild'})
+  }
+
+  deleteImage(bildZuLöschen: Bild){
+    this.kommunikation.liste = this.kommunikation.liste.filter((bild) => {bild!=bildZuLöschen})
+  }
 }
