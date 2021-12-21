@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { Bild } from '../model/bild';
 
 @Injectable({
@@ -23,15 +23,21 @@ export class ButtonBildKommunikationService {
     }
   ]
 
+  private subject: Subject<Bild>;
+
+
   toggleBild(){
     this.bildNummer++;
     this.bildNummer %= this.liste.length;
+    this.subject.next(this.liste[this.bildNummer])
   }
 
-  getPicture(): Bild {
-    return this.liste[this.bildNummer];
+  getPicture(): Observable<Bild> {
+    return this.subject.asObservable();
   }
 
   constructor() {
+    this.subject = new Subject<Bild>();
+
   }
 }
