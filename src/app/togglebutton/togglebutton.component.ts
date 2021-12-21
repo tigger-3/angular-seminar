@@ -14,6 +14,6 @@ export class TogglebuttonComponent implements OnInit {
   }
 
   bilderWechsel() {
-    this.kommunikation.bildNummer++
+    this.kommunikation.toggleBild();
   }
 }
