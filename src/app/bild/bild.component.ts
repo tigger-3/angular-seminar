@@ -14,7 +14,7 @@ export class BildComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.kommunikation.getPicture().subscribe((picture)=>{this.picture=picture})
+    this.kommunikation.getPictureAsObservable().subscribe((picture)=>{this.picture=picture})
   }
 
   picture: Bild;

@@ -32,7 +32,7 @@ export class ButtonBildKommunikationService {
     this.subject.next(this.liste[this.bildNummer])
   }
 
-  getPicture(): Observable<Bild> {
+  getPictureAsObservable(): Observable<Bild> {
     return this.subject.asObservable();
   }
 
