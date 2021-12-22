@@ -1,5 +1,17 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <button class="navbar-brand btn btn-primary rounded-pill text-light" [routerLink]="['/']">Home</button>
-  <button class="navbar-brand btn btn-primary rounded-pill text-light" [routerLink]="['/image-table']">Image Table</button>
-  <button class="navbar-brand btn btn-primary rounded-pill text-light" [routerLink]="['/image']">Image</button>
+
 </nav>
+
+<p>
+  <mat-toolbar color="primary">
+    <!--<span class="example-spacer"></span>-->
+    <button mat-icon-button  color="basic" class="navbar-brand btn btn-primary rounded-pill text-light" [routerLink]="['/']">
+      <mat-icon>home</mat-icon></button>
+    <button mat-icon-button color="basic" class="navbar-brand btn btn-primary rounded-pill text-light" [routerLink]="['/image-table']"><mat-icon>folder</mat-icon></button>
+    <button mat-icon-button color="basic" class="navbar-brand btn btn-primary rounded-pill text-light" [routerLink]="['/image']"><mat-icon>image</mat-icon></button>
+    <span class="example-spacer"></span>
+    <span>Image Gallery</span>
+    <span class="example-spacer"></span>
+  </mat-toolbar>
+</p>
+
