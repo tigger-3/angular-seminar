@@ -7,10 +7,10 @@
   </tr>
   <tr *ngFor="let bild of getListe()">
     <td>
-      <input type="text" [value]="bild.name" (change)="bild.name = name.value" #name>
+      <input type="text" [value]="bild.name" (change)="updateImageName(bild, name.value)" #name>
     </td>
     <td>
-      <input type="text" [value]="bild.src" (change)="bild.src = src.value" #src>
+      <input type="text" [value]="bild.src" (change)="updateImageSrc(bild, src.value)" #src>
     </td>
     <td>
       <img [src]="bild.src" [alt]="bild.name" width="100" height="100">
