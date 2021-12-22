@@ -10,6 +10,8 @@ import {RouterModule, Routes} from "@angular/router";
 import { HomePageComponent } from './home-page/home-page.component';
 import { SingleImagePageComponent } from './single-image-page/single-image-page.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './material.module';
 
 const appRoutes: Routes = [
   {path: '', component: HomePageComponent},
@@ -30,8 +32,10 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
+    MaterialModule,
     HttpClientModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
