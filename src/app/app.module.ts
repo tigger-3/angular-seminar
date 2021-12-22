@@ -6,18 +6,30 @@ import { AppComponent } from './app.component';
 import { BildComponent } from './bild/bild.component';
 import { TogglebuttonComponent } from './togglebutton/togglebutton.component';
 import { ImageTableComponent } from './image-table/image-table.component';
+import {RouterModule, Routes} from "@angular/router";
+import { HomePageComponent } from './home-page/home-page.component';
+import { SingleImagePageComponent } from './single-image-page/single-image-page.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
+const appRoutes: Routes = [
+  {path: '', component: HomePageComponent},
+  {path: 'images', component: ImageTableComponent},
+  {path: 'image', component: SingleImagePageComponent},
+  {path: '**', redirectTo: '/', pathMatch: 'full'}
+]
 
 @NgModule({
   declarations: [
     AppComponent,
     BildComponent,
     TogglebuttonComponent,
-    ImageTableComponent
+    ImageTableComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]
