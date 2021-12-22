@@ -24,7 +24,9 @@ const appRoutes: Routes = [
     BildComponent,
     TogglebuttonComponent,
     ImageTableComponent,
-    NavbarComponent
+    NavbarComponent,
+    HomePageComponent,
+    SingleImagePageComponent
   ],
   imports: [
     BrowserModule,
