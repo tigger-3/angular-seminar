@@ -13,7 +13,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomePageComponent},
-  {path: 'images', component: ImageTableComponent},
+  {path: 'image-table', component: ImageTableComponent},
   {path: 'image', component: SingleImagePageComponent},
   {path: '**', redirectTo: '/', pathMatch: 'full'}
 ]
