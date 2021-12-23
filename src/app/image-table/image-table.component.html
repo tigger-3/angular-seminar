@@ -7,22 +7,33 @@
   </tr>
   <tr *ngFor="let bild of getListe()">
     <td>
-      <input type="text" [value]="bild.name" (change)="updateImageName(bild, name.value)" #name>
+      <form class="example-form">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Bild Name</mat-label>
+          <input matInput type="text" [value]="bild.name" (change)="updateImageName(bild, name.value)" #name>
+        </mat-form-field>
+      </form>
     </td>
     <td>
-      <input type="text" [value]="bild.src" (change)="updateImageSrc(bild, src.value)" #src>
+      <form class="example-form">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Bild Quelle</mat-label>
+      <input matInput type="text" [value]="bild.src" (change)="updateImageSrc(bild, src.value)" #src>
+        </mat-form-field>
+      </form>
     </td>
     <td>
       <img [src]="bild.src" [alt]="bild.name" width="100" height="100" [routerLink]="['/image', bild.name]">
     </td>
     <td>
-      <button (click)="deleteImage(bild)">
-        Bild löschen
+      <button mat-icon-button color="accent" aria-label="Example icon button with a delete icon" (click)="deleteImage(bild)">
+        <mat-icon>delete</mat-icon>
       </button>
     </td>
   </tr>
 </table>
-<button (click)="addImage()">
-  Bild hinzufügen
+<button mat-raised-button (click)="addImage()">
+  <mat-icon>add</mat-icon>
 </button>
+
 
