@@ -13,7 +13,7 @@
       <input type="text" [value]="bild.src" (change)="updateImageSrc(bild, src.value)" #src>
     </td>
     <td>
-      <img [src]="bild.src" [alt]="bild.name" width="100" height="100">
+      <img [src]="bild.src" [alt]="bild.name" width="100" height="100" [routerLink]="['/image', bild.name]">
     </td>
     <td>
       <button (click)="deleteImage(bild)">

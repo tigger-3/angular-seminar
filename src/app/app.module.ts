@@ -12,11 +12,13 @@ import { SingleImagePageComponent } from './single-image-page/single-image-page.
 import { NavbarComponent } from './navbar/navbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
+import { ImageGalleryPageComponent } from './image-gallery-page/image-gallery-page.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomePageComponent},
   {path: 'image-table', component: ImageTableComponent},
-  {path: 'image', component: SingleImagePageComponent},
+  {path: 'image-gallery', component: ImageGalleryPageComponent},
+  {path: 'image/:name', component: SingleImagePageComponent},
   {path: '**', redirectTo: '/', pathMatch: 'full'}
 ]
 
@@ -28,7 +30,8 @@ const appRoutes: Routes = [
     ImageTableComponent,
     NavbarComponent,
     HomePageComponent,
-    SingleImagePageComponent
+    SingleImagePageComponent,
+    ImageGalleryPageComponent
   ],
   imports: [
     BrowserModule,
