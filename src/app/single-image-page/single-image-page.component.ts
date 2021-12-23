@@ -11,16 +11,20 @@ import { ButtonBildKommunikationService } from '../services/button-bild-kommunik
 })
 export class SingleImagePageComponent implements OnInit {
 
-  image: Bild
+  imageName: string
 
   constructor(private route: ActivatedRoute, private kommunikation: ButtonBildKommunikationService) {
-    this.image = {name: "", src: ""}
+    this.imageName = "";
+  }
+
+  getImage(): Bild {
+    return this.kommunikation.getImageWithName(this.imageName);
   }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(
       (params: ParamMap) => {
-        this.image = this.kommunikation.getImageWithName(params.get('name')!)
+        this.imageName = params.get('name')!
       }
     );
   }
